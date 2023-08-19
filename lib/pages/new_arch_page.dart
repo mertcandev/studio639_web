@@ -30,6 +30,7 @@ class _NewArchPageState extends State<NewArchPage> {
         child: NewArchAppBar(),
       ),
       body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
         controller: controller,
         scrollDirection: Axis.vertical,
         children: const [ArchAboutUsPage(), ArchProjectsPage(), ContactUs()],

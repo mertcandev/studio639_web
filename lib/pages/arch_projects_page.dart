@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_app/components/popup_carousel.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+bool isHovering1 = false;
+bool isHovering2 = false;
+bool isHovering3 = false;
+bool isHovering4 = false;
+
 class ArchProjectsPage extends StatefulWidget {
   const ArchProjectsPage({super.key});
 
@@ -11,11 +16,6 @@ class ArchProjectsPage extends StatefulWidget {
 }
 
 class _ArchProjectsPageState extends State<ArchProjectsPage> {
-  bool isHovering1 = false;
-  bool isHovering2 = false;
-  bool isHovering3 = false;
-  bool isHovering4 = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
