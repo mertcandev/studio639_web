@@ -52,14 +52,16 @@ class ArchAboutUsPage extends StatelessWidget {
                           children: [
                             Container(
                               height: 240,
-                              decoration: const BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10)),
+                              decoration: BoxDecoration(
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(10)),
                                   image: DecorationImage(
                                       fit: BoxFit.cover,
-                                      image: AssetImage(
-                                        "arch1.jpeg",
-                                      ))),
+                                      colorFilter: ColorFilter.mode(
+                                          Colors.grey.shade100,
+                                          BlendMode.color),
+                                      image: const NetworkImage(
+                                          "https://i.ibb.co/Dr8ZrT4/1.jpg"))),
                             ),
                             const SizedBox(height: 20),
                             Text(
@@ -89,7 +91,8 @@ class ArchAboutUsPage extends StatelessWidget {
                               colorFilter: ColorFilter.mode(
                                   Colors.grey.shade100, BlendMode.color),
                               fit: BoxFit.cover,
-                              image: const AssetImage("furkan.png")),
+                              image: const NetworkImage(
+                                  "https://i.ibb.co/fvSGRdx/furkan.png")),
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.grey.shade100,
                           boxShadow: [

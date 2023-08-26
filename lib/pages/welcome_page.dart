@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_app/components/new_arch_appbar.dart';
-import 'package:flutter_web_app/pages/arch_aboutus_page.dart';
+
 import 'package:flutter_web_app/pages/new_arch_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
