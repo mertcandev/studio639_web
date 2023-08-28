@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_app/pages/new_3d_page.dart';
 import 'package:flutter_web_app/pages/new_arch_page.dart';
 import 'package:flutter_web_app/pages/welcome_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-bool isSelected1 = true;
-bool isSelected2 = false;
-bool isSelected3 = false;
+bool _isSelected1 = true;
+bool _isSelected2 = false;
+bool _isSelected3 = false;
 //Arch page pageview ile yapılandır.
 
-class NewArchAppBar extends StatefulWidget {
-  const NewArchAppBar({super.key});
+class New3DAppBar extends StatefulWidget {
+  const New3DAppBar({super.key});
 
   @override
-  State<NewArchAppBar> createState() => _NewArchAppBarState();
+  State<New3DAppBar> createState() => _New3DAppBarState();
 }
 
-class _NewArchAppBarState extends State<NewArchAppBar> {
+class _New3DAppBarState extends State<New3DAppBar> {
   @override
   Widget build(BuildContext context) {
     const FontWeight fontWeight = FontWeight.w500;
@@ -60,7 +61,7 @@ class _NewArchAppBarState extends State<NewArchAppBar> {
                       fontWeight: FontWeight.w300,
                       color: Colors.grey)),
               const SizedBox(width: 10),
-              Text("mimarlık",
+              Text("3d baskı",
                   textAlign: TextAlign.end,
                   style: GoogleFonts.ptSans(
                       fontSize: 24,
@@ -71,13 +72,13 @@ class _NewArchAppBarState extends State<NewArchAppBar> {
           const Spacer(),
           InkWell(
             onTap: () {
-              controller.animateToPage(0,
+              controller3D.animateToPage(0,
                   duration: const Duration(milliseconds: 1500),
                   curve: Curves.easeInOutCirc);
               setState(() {
-                isSelected1 = true;
-                isSelected2 = false;
-                isSelected3 = false;
+                _isSelected1 = true;
+                _isSelected2 = false;
+                _isSelected3 = false;
               });
             },
             child: Text(
@@ -85,19 +86,19 @@ class _NewArchAppBarState extends State<NewArchAppBar> {
               style: GoogleFonts.ptSans(
                   fontSize: 22,
                   fontWeight:
-                      isSelected1 == true ? FontWeight.bold : FontWeight.w100),
+                      _isSelected1 == true ? FontWeight.bold : FontWeight.w100),
             ),
           ),
           const SizedBox(width: 15),
           InkWell(
             onTap: () {
-              controller.animateToPage(1,
+              controller3D.animateToPage(1,
                   duration: const Duration(milliseconds: 1500),
                   curve: Curves.easeInOutCirc);
               setState(() {
-                isSelected1 = false;
-                isSelected2 = true;
-                isSelected3 = false;
+                _isSelected1 = false;
+                _isSelected2 = true;
+                _isSelected3 = false;
               });
             },
             child: Text(
@@ -105,19 +106,19 @@ class _NewArchAppBarState extends State<NewArchAppBar> {
               style: GoogleFonts.ptSans(
                   fontSize: 22,
                   fontWeight:
-                      isSelected2 == true ? FontWeight.bold : FontWeight.w100),
+                      _isSelected2 == true ? FontWeight.bold : FontWeight.w100),
             ),
           ),
           const SizedBox(width: 15),
           InkWell(
             onTap: () {
-              controller.animateToPage(2,
+              controller3D.animateToPage(2,
                   duration: const Duration(milliseconds: 1500),
                   curve: Curves.easeInOutCirc);
               setState(() {
-                isSelected1 = false;
-                isSelected2 = false;
-                isSelected3 = true;
+                _isSelected1 = false;
+                _isSelected2 = false;
+                _isSelected3 = true;
               });
             },
             child: Text(
@@ -125,7 +126,7 @@ class _NewArchAppBarState extends State<NewArchAppBar> {
               style: GoogleFonts.ptSans(
                   fontSize: 22,
                   fontWeight:
-                      isSelected3 == true ? FontWeight.bold : FontWeight.w100),
+                      _isSelected3 == true ? FontWeight.bold : FontWeight.w100),
             ),
           )
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_app/pages/new_3d_page.dart';
 
 import 'package:flutter_web_app/pages/new_arch_page.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -40,7 +41,6 @@ class _WelcomePageState extends State<WelcomePage> {
                       Navigator.of(context).push(MaterialPageRoute(
                           fullscreenDialog: true,
                           builder: (context) => const NewArchPage()));
-                      
                     },
                     onHover: (hovering) {
                       setState(() {
@@ -88,7 +88,11 @@ class _WelcomePageState extends State<WelcomePage> {
                     ),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          fullscreenDialog: true,
+                          builder: (context) => const New3DPage()));
+                    },
                     onHover: (hovering) {
                       setState(() {
                         _isRightHovering = hovering;
@@ -107,7 +111,8 @@ class _WelcomePageState extends State<WelcomePage> {
                                       : Colors.grey.shade100,
                                   BlendMode.color),
                               fit: BoxFit.cover,
-                              image: const AssetImage("3dprint2.jpeg"))),
+                              image: const NetworkImage(
+                                  "https://i.ibb.co/Ntv1gWH/3dprint2.jpg"))),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
